@@ -29,7 +29,7 @@
         .then(data=> showUserNames(data));
         
         function showUserNames(data){
-            let userLists = '';
+            let userLists = [];
             data.forEach(user => {                  
                 userLists = userLists + `<div class = "user">
                                             <h3> Name: ${user.name} </h3> 
@@ -39,7 +39,7 @@
                 
             });
             //console.log(lists);
-            const userContainer =document.getElementById ("user-container").innerHTML = userLists;
+            const userContainer = document.getElementById("user-container").innerHTML = userLists;
         }
     </script>
 </body>
