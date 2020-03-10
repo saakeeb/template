@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .user{
+            
+            margin: 15px 250px 15px 25px;
+            padding: 15px 20px;
+            border-radius: 10px;
+            box-shadow: 7px 7px 12px grey;
+            background-image: linear-gradient(to right, #00FFFF, #0099CC );
+
+        }
+    </style>
+</head>
+<body>
+    <div id="user-container">
+
+    </div>
+    
+
+
+    <script>
+        fetch('https://jsonplaceholder.typicode.com/users')
+        .then(res => res.json())
+        .then(data=> showUserNames(data));
+        
+        function showUserNames(data){
+            let userLists=[];
+            data.forEach(user => {                  
+                userLists=userLists+ `<div class="user">
+                                <h3> Name: ${user.name} </h3> 
+                                <h5>Nick Name: ${user.username} </h5>
+                                <p> Company Name: ${user.company.name} , Company BS Name: ${user.company.bs} 
+                            </div>`
+                
+            });
+            //console.log(lists);
+            const ol =document.getElementById("user-container").innerHTML=userLists;
+        }
+    </script>
+</body>
+</html>
