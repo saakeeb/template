@@ -31,15 +31,15 @@
         function showUserNames(data){
             let userLists=[];
             data.forEach(user => {                  
-                userLists=userLists+ `<div class="user">
-                                <h3> Name: ${user.name} </h3> 
-                                <h5>Nick Name: ${user.username} </h5>
-                                <p> Company Name: ${user.company.name} , Company BS Name: ${user.company.bs} 
-                            </div>`
+                userLists = userLists + `<div class="user">
+                                            <h3> Name: ${user.name} </h3> 
+                                            <h5>Nick Name: ${user.username} </h5>
+                                            <p> Company Name: ${user.company.name} , Company BS Name: ${user.company.bs} 
+                                        </div>`
                 
             });
             //console.log(lists);
-            const ol =document.getElementById("user-container").innerHTML=userLists;
+            const userContainer =document.getElementById("user-container").innerHTML=userLists;
         }
     </script>
 </body>
